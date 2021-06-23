@@ -1,0 +1,1192 @@
+/* FONTS */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/lato-v17-latin-regular.woff2') format('woff2'),
+         url('../fonts/lato-v17-latin-regular.woff') format('woff');
+  }
+  
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: italic;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/lato-v17-latin-italic.woff2') format('woff2'), 
+        url('../fonts/lato-v17-latin-italic.woff') format('woff'); 
+}
+
+@font-face {
+    font-display:swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 900;
+    src: local(''),
+        url('../fonts/lato-v17-latin-900.woff2') format('woff2'), 
+        url('../fonts/lato-v17-latin-900.woff') format('woff'); 
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Calligraffitti';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/calligraffitti-v12-latin-regular.woff2') format('woff2'), 
+        url('../fonts/calligraffitti-v12-latin-regular.woff') format('woff'); 
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* COLORS */
+
+
+:root {
+    --white: #fff;
+    --blue: #3693D6;
+    --greyShadow: #0000004D;
+    --blueButton: #9BC0FF;
+    --greyButton: #E2E2E2;
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* TYPO */
+
+body {
+    font-family: "Lato", sans-serif;
+    font-size: 1.4rem;
+    line-height: 2em;
+    color: var(--white);
+}
+
+h1 {
+    text-align: right;
+    transform: translateX(-10%) rotate(351deg);
+    font-family: "Calligraffitti", cursive;
+    font-weight: 400;
+    font-size: 3.4rem;
+    line-height: 1.5em;
+    color: var(--white);
+    text-shadow: 0 .3rem .6rem var(--greyShadow);
+}
+
+h1 span {
+    font-size: 4.6rem;
+    line-height: 1.2em;
+    margin-bottom: 1rem;
+}
+
+h2,
+h3,
+h4 {
+    font-weight: 900;
+    line-height: 1.2em;
+    color: var(--white);
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin-bottom: 1em;
+}
+
+.portfolio h2,
+.testimonials h2 {
+    font-size: 3.2rem;
+    color: var(--blue);
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+p {
+    text-align: center;
+    font-weight: 400;
+}
+
+.about p {
+    font-size: 2.4rem;
+    line-height: 1.5em;
+}
+
+.portfolio p {
+    font-size: 1.4rem;
+}
+
+.testimonials p {
+    font-size: 1.6rem;
+    color: var(--blue);
+    line-height: 2em;
+}
+
+
+@media screen and (min-width: 36em) {
+    h1 span {
+        font-size: 10rem;
+    }
+
+    h1 {
+        min-width: 45.7rem;
+        min-height: 33.1rem;
+        font-size: 7.3rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    h2 {
+        font-size: 4.2rem;
+        margin-bottom: 4.1rem;
+    }
+
+    .testimonials h2 {
+        font-size: 4.2rem;
+    }
+
+    h3 {
+        font-size: 3.6rem;
+    }
+
+    .about p {
+        font-size: 2.8rem;
+    }
+
+    .testimonials p {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (min-width: 75em) {
+
+    
+    h1 {
+        font-size: 9.9rem;
+    }
+
+    h1 span {
+        font-size: 13.5rem;
+    }
+    
+    h2 {
+        font-size: 5.2rem;
+        margin-bottom: 5rem;
+    }
+
+    .testimonials h2 {
+        font-size: 5.2rem;
+    }
+
+    .about p {
+        font-size: 3.2rem;
+        line-height: 1.8em;
+    }
+
+    .testimonials p {
+        font-size: 3.2rem;
+    }
+}
+
+@media screen and (min-width: 100em) {
+
+    
+    h1 {
+        font-size: 12.8rem;
+    }
+
+    h1 span {
+        font-size: 17.5rem;
+    }
+
+    h2 {
+        margin-bottom: 5.2rem;
+    }
+
+    .about p {
+        font-size: 4.2rem;
+        line-height: 1.4em;
+    }
+
+    .testimonials p {
+        font-size: 3.2rem;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* COMPONENTS */
+
+
+.toggle-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 3.2rem;
+    height: 2.7rem;
+    padding: 0;
+
+    color: var(--white);
+    background-color: transparent;
+    border: 0;
+    transition: .3s;
+}
+
+@media screen and (min-width: 49em) {
+    .toggle-menu {
+        display: none;
+    }
+}
+
+.menu-bar {
+    width: 3.2rem;
+    margin: 0;
+
+    border: 1.5px solid var(--white);
+    border-radius: 0.7rem
+}
+
+button {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+}
+
+.big-button {
+    display: flex;
+    justify-content: center;
+    background-color: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 3.4rem;
+    padding: 1rem 2.2rem;
+    letter-spacing: 0px;
+}
+
+.button-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-size: 2.4rem;
+    line-height: 1.2rem;
+}
+
+.arrow {
+    margin-left: .5rem;
+}
+
+@media screen and (min-width: 75em) {
+
+    .big-button {
+        padding: 1.4rem 2.9rem;
+    }
+
+    .button-content {
+        font-size: 3.2rem;
+    }
+}
+
+.small-button {
+    background: transparent;
+    border: 2px solid var(--white);
+    border-radius: 3.4rem;
+    color: var(--white);
+    padding: .3rem 2.5rem;
+}
+
+.button-blue {
+    background-color: var(--blueButton);
+    border: 1px solid var(--blueButton);
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* LAYOUT */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+    width: 29rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media screen and (min-width: 36em){
+    .container {
+        width: 56rem;
+    }
+}
+
+@media screen and (min-width: 49em) {
+    .container {
+        min-width: 75.3rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    
+    .container {
+        min-width: 99.2rem;
+    }
+}
+
+@media screen and (min-width: 75em) {
+
+    .container {
+        min-width: 120rem;
+    }
+}
+
+@media screen and (min-width: 100em) {
+
+    .container {
+        min-width: 160rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* EFFECTS */
+
+.toggle-menu:hover {
+    background-color: var(--blue);
+}
+
+.cta-box:hover,
+.cta-box:focus {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.button-content:hover {
+    filter: invert(57%) sepia(13%) saturate(6679%) hue-rotate(180deg) brightness(90%) contrast(85%);
+}
+
+.big-button:hover {
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    border-radius: 3.4rem;
+}
+
+.small-button:hover {
+    background: var(--white);
+    color: var(--blue);
+}
+
+.social-icone:hover,
+.social-icone:focus,
+.contact-link:hover,
+.contact-link:focus,
+.location-adress:hover,
+.location-adress:focus {
+    transform: scale(1.2);
+}
+
+.skip-button:hover,
+.skip-button:focus {
+    background-color: var(--blueButton);
+}
+
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* HEADER */
+
+.site-header {
+    display: flex;
+    background-color: transparent;
+    position: relative;
+}
+
+.site-header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 22.5rem
+}
+
+.menu {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    transition: .5s;
+    padding-top: 2.3rem;
+    border-radius: 2px;
+}
+
+.menu[hidden] {
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition-timing-function: cubic-bezier(.56,-0.8,.43,1.73);
+}
+
+.menu:not([hidden]) {
+    visibility: visible;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(0);
+    transition-timing-function: cubic-bezier(.56,-0.8,.43,1.73);
+}
+
+.cta-box {
+    color: var(--blue);
+    background-color: var(--white);
+    padding: .4em 1em;
+    border-radius: 1.1em;
+}
+
+@media screen and (min-width: 49em) {
+
+    .logo {
+        max-width: 30.7rem;
+    }
+
+    .menu {
+        visibility: visible;
+        position: static;
+        top: 0;
+        width: 30.5rem;
+        padding-top: 0;
+        transform: none;
+    }
+
+    .menu[hidden] {
+        display: none;
+    }
+
+    .menu-link {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+
+    .logo {
+        max-width: 40.3rem;
+    }
+
+    .menu {
+        visibility: visible;
+        position: static;
+        top: 0;
+        width: 40rem;
+        padding-top: 0;
+    }
+
+    .menu-link {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+}
+
+@media screen and (min-width: 75em){
+
+    .logo {
+        min-width: 50rem;
+    }
+
+    .menu {
+        min-width: 48.6rem;
+    }
+
+    .menu-link {
+        font-size: 2.6rem;
+    }
+}
+
+@media screen and (min-width: 100em){
+
+    .logo {
+        min-width: 51rem;
+    }
+
+    .menu {
+        min-width: 58.8rem;
+    }
+
+    .menu-link {
+        font-size: 3.2rem;
+    }
+
+    .cta-box {
+        padding: 1.4rem 3.2rem;
+    }
+}
+
+
+/* HERO */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 100vh;
+    max-width: 100vh;
+    padding-top: 4.6rem;
+    padding-bottom: 8.5rem;
+
+    background-image: url("../img/photo_montagnes.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 144dpi) {
+    .hero {
+        background-image: url("../img/photo_montagnes@2x.png");
+    }
+}
+
+.site-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+@media screen and (min-width: 62em) {
+
+    .hero {
+        max-width: none;
+        background-position: center;
+    }
+
+    .site-title {
+        display: flex;
+        flex-direction: column;
+        transform: rotate(351deg);
+    }
+}
+
+
+/* ABOUT */
+
+.about {
+    min-height: auto;
+    background-color: var(--blue);
+}
+
+@media screen and (min-width: 62em) {
+
+    .about {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+@media screen and (min-width: 75em) {
+
+    .about {
+        padding-top: 11rem;
+        padding-bottom: 11rem;
+    }
+}
+
+@media screen and (min-width: 100em) {
+
+    .about {
+        padding-top: 14.5rem;
+        padding-bottom: 14.5rem;
+    }
+}
+
+
+/* PORTFOLIO */
+
+.portfolio {
+    min-height: auto;
+    padding-bottom: 0;
+}
+
+.portfolio h2 {
+    margin-bottom: 2em;
+}
+
+.portfolio-item {
+    position: relative;
+    z-index: 100;
+}
+
+.image-box {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-box:hover {
+    z-index: -100;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.portfolio-items {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    row-gap: 1.6rem;
+}
+
+.portfolio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.6rem 2.5rem;
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    z-index: 200;
+
+    transform: translateY(-100%);
+
+    color: var(--white);
+    background-color: var(--blue);
+    opacity: 65%;
+}
+
+.active {
+    z-index: 200;
+}
+
+.image-box:hover {
+    z-index: -100;
+}
+
+.portfolio-title {
+    text-align: center;
+}
+
+
+@media screen and (min-width: 36rem) {
+
+    .portfolio h2 {
+        margin-bottom: 6rem;
+    }
+
+    .portfolio-items {
+        display: grid;
+        grid-template-rows: 23.9rem 49.3rem 26.2rem;
+        grid-template-columns: repeat(2, auto);
+        gap: 1.6rem;
+    }
+
+    .image-box {
+        width: 100%;
+        height: 100%;
+    }
+
+    .portfolio-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .portfolio-content {
+        position: static;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        top: -100;
+    }
+
+    .three {
+        grid-area: 2/1/2/span 2;
+    }
+
+    .portfolio-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio p {
+        margin-bottom: 1.5rem;
+        line-height: 1.3em;
+    }
+
+    .active .portfolio-title {
+        font-size: 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .active .portfolio-text {
+        font-size: 1.6rem;
+        line-height: 2em;
+        margin-bottom: 4rem;
+    }
+
+}
+
+@media screen and (min-width: 49em) {
+
+    .portfolio-items {
+        grid-template-rows: repeat(3, 23.5rem);
+        grid-template-columns: repeat(3, 1f);
+        gap: 2.6rem;
+    }
+
+    .two {
+        grid-area: 1/2/1/span 2;
+    }
+
+    .two .portfolio-img {
+        object-position: top;
+    }
+
+    .three {
+        grid-area: 2/1/span 2/span 2;
+    }
+
+    .portfolio-title {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 62rem) {
+
+    .portfolio {
+        padding-top: 0;
+    }
+    
+    .portfolio .section-title {
+        font-size: 4.2rem;
+        margin-top: 9.6rem;
+        margin-bottom: 9.6rem;
+    }
+
+    .portfolio-items {
+        grid-template-rows: repeat(3, 30.4rem);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .portfolio p {
+        font-size: 1.8rem;
+    }
+
+    .portfolio-title {
+        font-size: 2.4rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .active .portfolio-title {
+        font-size: 3.2rem;
+        margin-bottom: 1em;
+
+    }
+
+    .active .portfolio-text {
+        font-size: 2.4rem;
+        line-height: 1.5em;
+    }
+
+    .active .small-button {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 75rem) {
+
+    .portfolio .section-title {
+        font-size: 5.2rem;
+        margin-top: 11.5rem;
+        margin-bottom: 11.5rem;
+    }
+    
+    .portfolio-items {
+        grid-template-rows: repeat(3, 37rem);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem;
+    }
+
+    .active .portfolio-title {
+        font-size: 3.8rem;
+        margin-bottom: 1em;
+
+    }
+
+    .portfolio p {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .portfolio-title {
+        font-size: 3.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .small-button {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 100rem) {
+    
+    .portfolio-items {
+        grid-template-rows: repeat(3, 50rem);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .active .portfolio-title {
+        font-size: 5.2rem;
+        margin-bottom: 1em;
+
+    }
+
+    .active .portfolio-text {
+        max-width: 79rem;
+        font-size: 3.2rem;
+        line-height: 1.8em;
+    }
+
+    .small-button {
+        font-size: 3.4rem;
+        padding: 1.4rem 4.8rem;
+    }
+
+    .portfolio-title {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+/* TESTIMONIALS */
+
+.testimony {
+    display: flex;
+    z-index: -10;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portrait-box {
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.testimony-name {
+    color: var(--blue);
+    font-weight: 400;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+}
+
+.skip-buttons {
+    display: flex;
+    margin-top: 6rem;
+}
+
+.skip-button {
+    height: 2.4rem;
+    width: 2.4rem;
+    border: 1px solid var(--greyButton);
+    border-radius: 50%;
+}
+
+.skip-button:nth-child(odd){
+    margin-left: .6rem;
+    margin-right: .6rem;
+}
+
+@media screen and (min-width: 36em) {
+    .testimony {
+        max-width: 44.4rem;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .testimony {
+        max-width: 50.4rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+    .testimony {
+        min-width: 65.6rem;
+    }
+
+    .testimonials {
+        padding-top: 11.5rem;
+        padding-bottom: 11.5rem;
+    }
+
+    .portrait-box {
+        width: 18.4rem;
+        height: 18.4rem;
+    }
+
+    .testimony-name {
+        font-size: 3.2rem;
+        margin-top: 4.2rem;
+        margin-bottom: 4.3rem;
+    }
+
+    .testimony-text {
+        line-height: 2em;
+    }
+
+    .skip-buttons {
+        margin-top: 6.5rem;
+        width: 10.4rem;
+    }
+
+    .skip-button {
+        height: 2.6rem;
+        width: 2.6rem;
+    }
+}
+
+@media screen and (min-width: 75em) {
+
+    .testimonials {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+
+    .testimony {
+        min-width: 79rem;
+    }
+
+    .testimony-name {
+        font-size: 3.6rem;
+    }
+
+}
+
+@media screen and (min-width: 100em) {
+
+    .portrait-box {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .testimony-name {
+        font-size: 4.2rem;
+        margin-top: 5.2rem;
+        margin-bottom: 4.3rem;
+    }
+
+    .skip-buttons {
+        margin-top: 8.2rem;
+        width: 10.4rem;
+    }
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    background-color: var(--blue);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    height: auto;
+}
+
+footer .container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 2rem;
+    justify-content: center;
+    width: 28rem;
+}
+
+.logo-footer-box {
+    font-family: "Lato", sans-serif;
+    max-width: 17rem;
+    min-height: 8.5rem;
+    justify-self: center;
+}
+
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    min-width: 28rem;
+}
+
+.contact {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 2rem;
+}
+
+.contact-items {
+    display: grid;
+    grid-template-rows: repeat(3, 3.4rem);
+    justify-items: left;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 11.8rem;
+    justify-self: center;
+}
+
+.social-icone {
+    max-width: 2.9rem;
+    max-height: 2.1rem;
+    object-position: center;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 36em) {
+
+    footer .container {
+        grid-template-columns: 35.6rem;
+    }
+}
+
+@media screen and (min-width: 49em) {
+    .site-footer {
+        display: flex;
+        align-items: center;
+        padding-top: 9rem;
+        padding-bottom: 9rem;
+    }
+
+    footer .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        justify-content: space-around;
+        align-items: start;
+        gap: 2.4rem;
+    }
+
+    .logo-footer-box {
+        min-width: 17rem;
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .location-adress,
+    .link {
+        font-size: 1.6rem;
+    }
+
+    .socials {
+        min-width: 17.4rem;
+        align-self: center;
+    }
+
+    .social-icone {
+        max-width: 4rem;
+        max-height: 3.1rem;
+    }
+}
+
+@media screen and (min-width: 62em) {
+
+    footer .container {
+        gap: 1.7rem;
+    }
+
+    .logo-footer-box {
+        min-width: 23.4rem;
+    }
+
+    .contacts {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 10rem;
+        justify-content: flex-start;
+    }
+
+    .socials {
+        min-width: 23.6rem;
+    }
+
+    .social-icone {
+        max-width: 5.6rem;
+        max-height: 4rem;
+    }
+}
+
+@media screen and (min-width: 75em) {
+
+    .site-footer {
+        padding-top: 11.5rem;
+        padding-bottom: 11.5rem;
+    }
+
+    footer .container {
+        gap: 3.4rem;
+    }
+    
+    .logo-footer-box {
+        min-width: 26.3rem;
+    }
+
+    .contacts-title {
+        font-size: 3.2rem;
+    }
+
+    .location-adress {
+        font-size: 2.2rem;
+    }
+
+    .link {
+        font-size: 2.2rem;
+    }
+
+    .socials {
+        min-width: 26.3rem;
+    }
+
+}
+
+@media screen and (min-width: 100em) {
+
+    footer .container {
+        gap: 8.1rem;
+    }
+}
