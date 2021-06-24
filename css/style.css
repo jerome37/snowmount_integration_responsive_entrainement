@@ -21,6 +21,17 @@
 }
 
 @font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/lato-v17-latin-700.woff2') format('woff2'),
+         url('../fonts/lato-v17-latin-700.woff') format('woff');
+}
+  
+
+@font-face {
     font-display:swap;
     font-family: 'Lato';
     font-style: normal;
@@ -86,7 +97,7 @@ h1 span {
 h2,
 h3,
 h4 {
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1.2em;
     color: var(--white);
 }
@@ -257,7 +268,7 @@ p {
 
 button {
     font-family: "Lato", sans-serif;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .big-button {
@@ -374,10 +385,32 @@ section {
     background-color: var(--blue);
 }
 
+.menu-item {
+    position: relative;
+}
+.menu-link:not(.cta-box)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 0.1rem;
+    background-color: #fff;
+    transform: scaleX(0);
+    transition: .5s;
+    bottom: 0;
+    transform-origin: center;
+}
+
+.menu-item:hover .menu-link::after {  
+    transform: scaleX(1);
+    transition: .5s .5s;
+}
+
 .cta-box:hover,
 .cta-box:focus {
     background-color: var(--blue);
     color: var(--white);
+    border: 2px solid white;
 }
 
 .button-content:hover {
@@ -393,6 +426,7 @@ section {
 .small-button:hover {
     background: var(--white);
     color: var(--blue);
+    transform: scale(1.1);
 }
 
 .social-icone:hover,
@@ -444,6 +478,7 @@ section {
 
 .menu[hidden] {
     display: flex;
+    visibility: hidden;
     justify-content: space-around;
     transform: translateX(100%);
     transition-timing-function: cubic-bezier(.56,-0.8,.43,1.73);
@@ -460,6 +495,7 @@ section {
 .cta-box {
     color: var(--blue);
     background-color: var(--white);
+    border: 2px solid transparent;
     padding: .4em 1em;
     border-radius: 1.1em;
 }
@@ -504,7 +540,7 @@ section {
 
     .menu-link {
         font-size: 2rem;
-        font-weight: 900;
+        font-weight: 700;
     }
 }
 
@@ -632,23 +668,31 @@ section {
     margin-bottom: 2em;
 }
 
+.portfolio-items {
+    display: grid;
+    grid-template-rows: repeat(5, 29rem);
+    row-gap: 1.6rem;
+    width: 100%;
+}
+
 .portfolio-item {
     position: relative;
-    z-index: 100;
+}
+
+.portfolio-item:hover .image-box {
+    z-index: -10;
+    transition: 1s;
 }
 
 .image-box {
-    position: relative;
-    z-index: 100;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
-
-.image-box:hover {
-    z-index: -100;
 }
 
 .portfolio-img {
@@ -658,42 +702,29 @@ section {
     object-position: center;
 }
 
-.portfolio-items {
-    display: grid;
-    grid-template-rows: repeat(5, auto);
-    row-gap: 1.6rem;
-}
-
 .portfolio-content {
+    position: absolute;
+    inset: 0;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-    padding: 1.6rem 2.5rem;
+    
+    padding: 9% 13%;
     height: 100%;
     width: 100%;
-
-    position: absolute;
-    z-index: 200;
-
-    transform: translateY(-100%);
-
     color: var(--white);
     background-color: var(--blue);
     opacity: 65%;
 }
 
-.active {
-    z-index: 200;
-}
-
-.image-box:hover {
-    z-index: -100;
-}
-
 .portfolio-title {
     text-align: center;
+}
+
+.active {
+    z-index: 1000;
 }
 
 
@@ -705,7 +736,7 @@ section {
 
     .portfolio-items {
         display: grid;
-        grid-template-rows: 23.9rem 49.3rem 26.2rem;
+        grid-template-rows: 1fr 2fr 1fr;
         grid-template-columns: repeat(2, auto);
         gap: 1.6rem;
     }
@@ -725,9 +756,6 @@ section {
     .portfolio-content {
         position: static;
         justify-content: center;
-        height: 100%;
-        width: 100%;
-        top: -100;
     }
 
     .three {
@@ -753,6 +781,11 @@ section {
         font-size: 1.6rem;
         line-height: 2em;
         margin-bottom: 4rem;
+    }
+
+    .active {
+        position: relative;
+        z-index: 1000;
     }
 
 }
@@ -781,6 +814,12 @@ section {
         font-size: 2.4rem;
         margin-bottom: 1.5rem;
     }
+
+    .active {
+        position: relative;
+        z-index: 1000;
+    }
+
 }
 
 @media screen and (min-width: 62rem) {
@@ -824,6 +863,12 @@ section {
     .active .small-button {
         font-size: 1.8rem;
     }
+
+    .active {
+        position: relative;
+        z-index: 1000;
+    }
+
 }
 
 @media screen and (min-width: 75rem) {
@@ -856,9 +901,16 @@ section {
         margin-bottom: 1.5rem;
     }
 
-    .small-button {
+    .small-button,
+    .active .small-button  {
         font-size: 2rem;
     }
+
+    .active {
+        position: relative;
+        z-index: 1000;
+    }
+
 }
 
 @media screen and (min-width: 100rem) {
@@ -881,8 +933,9 @@ section {
         line-height: 1.8em;
     }
 
-    .small-button {
-        font-size: 3.4rem;
+    .small-button,
+    .active .small-button {
+        font-size: 3.2rem;
         padding: 1.4rem 4.8rem;
     }
 
@@ -890,10 +943,20 @@ section {
         font-size: 4rem;
         margin-bottom: 1.5rem;
     }
+
+    .active {
+        position: relative;
+        z-index: 1000;
+    }
+
 }
 
 
 /* TESTIMONIALS */
+
+.testimonials {
+    padding-bottom: 0;
+}
 
 .testimony {
     display: flex;
@@ -907,6 +970,10 @@ section {
     height: 14rem;
     object-fit: cover;
     object-position: center;
+}
+
+.portrait-img {
+    border-radius: 100%;
 }
 
 .testimony-name {
@@ -935,7 +1002,7 @@ section {
 
 .swiper-container {
     width: 29rem;
-    height: 52.9rem;
+    height: 52.3rem;
 }
 
 .swiper-slide {
@@ -954,7 +1021,14 @@ section {
 }
 
 .swiper-pagination {
-    padding: 0;
+    margin: 0;
+    padding-bottom: 5rem;
+    padding-left: 0;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-left: .6rem;
+    margin-right: .6rem;
 }
 
 .swiper-pagination-bullet {
@@ -978,7 +1052,7 @@ section {
 
     .swiper-container {
         width: 44.4rem;
-        height: 48rem;
+        height: 50.4rem;
     }
     
     .swiper-slide {
@@ -994,7 +1068,7 @@ section {
 
     .swiper-container {
         width: 50.4rem;
-        height: 45rem;
+        height: 48.4rem;
     }
     
     .swiper-slide {
@@ -1009,7 +1083,6 @@ section {
 
     .testimonials {
         padding-top: 11.5rem;
-        padding-bottom: 11.5rem;
     }
 
     .portrait-box {
@@ -1039,7 +1112,7 @@ section {
 
     .swiper-container {
         width: 65.6rem;
-        height: 64rem;
+        height: 70.4rem;
     }
     
     .swiper-slide {
@@ -1050,26 +1123,39 @@ section {
         width: 2.6rem;
         height: 2.6rem;
     }
+
+    .swiper-pagination {
+        padding-bottom: 9.5rem;
+    }
 }
 
 @media screen and (min-width: 75em) {
 
     .testimonials {
         padding-top: 12rem;
-        padding-bottom: 12rem;
     }
 
     .testimony {
         min-width: 79rem;
     }
 
+    .section-title {
+        margin-bottom: 5.2rem;
+    }
+
+    .portrait-box {
+        width: 25rem;
+        height: 25rem;
+    }
+
     .testimony-name {
         font-size: 3.6rem;
+        margin-top: 5.2rem;
     }
 
     .swiper-container {
         width: 79rem;
-        height: 82.5;
+        height: 85.6rem;
     }
 
     .swiper-slide {
@@ -1091,14 +1177,9 @@ section {
         margin-bottom: 4.3rem;
     }
 
-    .skip-buttons {
-        margin-top: 8.2rem;
-        width: 10.4rem;
-    }
-
     .swiper-container {
         width: 79rem;
-        height: 82rem;
+        height: 85.6rem;
     }
 
 }
@@ -1221,6 +1302,7 @@ footer .container {
 
     .contacts {
         display: grid;
+        justify-content: space-evenly;
         grid-template-columns: repeat(2, auto);
         column-gap: 10rem;
     }
