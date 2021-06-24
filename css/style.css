@@ -933,15 +933,72 @@ section {
     margin-right: .6rem;
 }
 
+.swiper-container {
+    width: 29rem;
+    height: 52.9rem;
+}
+
+.swiper-slide {
+    min-width: 29rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skip-buttons {
+    display: flex;
+    margin-top: 6rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.swiper-pagination {
+    padding: 0;
+}
+
+.swiper-pagination-bullet {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--greyButton);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet:active,
+.swiper-pagination-bullet:hover {
+    background-color: var(--blueButton);
+}
+
 @media screen and (min-width: 36em) {
     .testimony {
         max-width: 44.4rem;
     }
+
+    .swiper-container {
+        width: 44.4rem;
+        height: 48rem;
+    }
+    
+    .swiper-slide {
+        min-width: 44.4rem;
+    }
+
 }
 
 @media screen and (min-width: 48em) {
     .testimony {
         max-width: 50.4rem;
+    }
+
+    .swiper-container {
+        width: 50.4rem;
+        height: 45rem;
+    }
+    
+    .swiper-slide {
+        min-width: 50.4rem;
     }
 }
 
@@ -979,6 +1036,20 @@ section {
         height: 2.6rem;
         width: 2.6rem;
     }
+
+    .swiper-container {
+        width: 65.6rem;
+        height: 64rem;
+    }
+    
+    .swiper-slide {
+        min-width: 65.6rem;
+    }
+
+    .swiper-pagination-bullet {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
 }
 
 @media screen and (min-width: 75em) {
@@ -994,6 +1065,15 @@ section {
 
     .testimony-name {
         font-size: 3.6rem;
+    }
+
+    .swiper-container {
+        width: 79rem;
+        height: 82.5;
+    }
+
+    .swiper-slide {
+        min-width: 79rem;
     }
 
 }
@@ -1015,6 +1095,12 @@ section {
         margin-top: 8.2rem;
         width: 10.4rem;
     }
+
+    .swiper-container {
+        width: 79rem;
+        height: 82rem;
+    }
+
 }
 
 
@@ -1044,7 +1130,7 @@ footer .container {
 
 .contacts {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     min-width: 28rem;
 }
 
@@ -1105,7 +1191,6 @@ footer .container {
 
     .contacts {
         display: flex;
-        justify-content: space-evenly;
     }
 
     .location-adress,
@@ -1138,7 +1223,6 @@ footer .container {
         display: grid;
         grid-template-columns: repeat(2, auto);
         column-gap: 10rem;
-        justify-content: flex-start;
     }
 
     .socials {
@@ -1190,3 +1274,62 @@ footer .container {
         gap: 8.1rem;
     }
 }
+
+/* --------------------------------------------------------------------- */
+
+/* TESTIMONIALS SLIDER */
+
+
+/* @media screen and (min-width: 36em) {
+
+}
+
+@media screen and (min-width: 49em) {
+
+}
+
+@media screen and (min-width: 62em) {
+
+}
+
+@media screen and (min-width: 75em) {
+
+    .swiper-container {
+        width: 79rem;
+        height: 82.5rem;
+    }
+
+    .swiper-slide {
+        min-width: 79rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skip-buttons {
+        display: flex;
+        margin-top: 6rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .swiper-pagination-bullet {
+        width: 2.6rem;
+        height: 2.6rem;
+        display: inline-block;
+        border-radius: 50%;
+        background: var(--greyButton);
+        opacity: 1;
+    }
+    
+    .swiper-pagination-bullet:active,
+    .swiper-pagination-bullet:hover {
+        background-color: var(--blueButton);
+    }
+
+}
+
+@media screen and (min-width: 100em) {
+    
+    
+} */
